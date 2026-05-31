@@ -6,805 +6,8 @@
   <meta name="description" content="Wynajem podnośników koszowych i profesjonalna obcinka drzew w Wielkopolsce. Firma Robert Maćkowiak, 28 lat doświadczenia." />
   <title>Podnośniki Koszowe — Robert Maćkowiak</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg-cream: #F9F6F0;
-      --bg-paper: #FFFFFF;
-      --text-dark: #141311;
-      --text-muted: #6B6661;
-      --accent-copper: #A8532B;
-      --accent-copper-dark: #843F1F;
-      --border-color: #E5DFD5;
-      --font-luxury: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-      --font-sans: "Inter", "Segoe UI", Arial, sans-serif;
-      --transition: .5s cubic-bezier(.25, 1, .5, 1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      overflow-x: clip;
-    }
-
-    body {
-      overflow-x: clip;
-      background: var(--bg-cream);
-      color: var(--text-dark);
-      font-family: var(--font-sans);
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    html.no-scroll,
-    body.no-scroll {
-      overflow: hidden;
-      height: 100vh;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .wrap {
-      width: min(1200px, calc(100% - 60px));
-      margin-inline: auto;
-    }
-
-    .welcome-overlay {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100dvh;
-      background: rgba(168, 83, 43, 0.65);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      text-align: center;
-      padding: 0 30px;
-      transition: opacity 0.8s cubic-bezier(.25, 1, .5, 1), visibility 0.8s;
-    }
-
-    .welcome-overlay.is-hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    .welcome-content {
-      max-width: 800px;
-      color: #fff;
-    }
-
-    .welcome-overlay .kicker {
-      color: #fff;
-      opacity: 0.9;
-      margin-bottom: 20px;
-    }
-
-    .welcome-overlay h1 {
-      display: block;
-      font-family: var(--font-luxury);
-      font-size: clamp(2.3rem, 5vw, 4rem);
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      line-height: 1.2;
-      margin-bottom: 40px;
-      color: #fff;
-    }
-
-    .btn-luxury-welcome {
-      border: 1px solid #ffffff;
-      color: #ffffff;
-      background: transparent;
-    }
-
-    .btn-luxury-welcome:hover {
-      background: #ffffff;
-      color: var(--accent-copper);
-    }
-
-    .progress-container {
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: transparent;
-    }
-
-    .progress-bar {
-      height: 100%;
-      background: var(--accent-copper);
-      width: 0%;
-      transition: width 0.1s ease-out;
-    }
-
-    .kicker {
-      color: var(--accent-copper);
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      font-family: var(--font-luxury);
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: var(--font-luxury);
-      font-weight: 300;
-      letter-spacing: -0.01em;
-      line-height: 1.15;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.8rem, 6vw, 4.8rem);
-      line-height: 1.1;
-      margin: 20px 0 30px;
-      color: var(--text-dark);
-      font-weight: 400;
-      letter-spacing: -0.02em;
-    }
-
-    .hero h1 strong {
-      font-weight: 600;
-      color: var(--accent-copper);
-      font-family: var(--font-luxury);
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      color: var(--text-dark);
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      font-weight: 400;
-    }
-
-    p {
-      color: var(--text-muted);
-      font-size: 1rem;
-    }
-
-    .lead {
-      max-width: 680px;
-      color: #4A4642;
-      font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-      font-family: var(--font-luxury);
-      font-weight: 300;
-      text-transform: none;
-    }
-
-    .line-separator {
-      height: 1px;
-      background: var(--border-color);
-      width: 100%;
-    }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      letter-spacing: .15em;
-      font-size: .8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      padding: 18px 36px;
-      border: 1px solid transparent;
-      transition: var(--transition);
-      cursor: pointer;
-      font-family: var(--font-luxury);
-    }
-
-    .btn-primary {
-      background: var(--text-dark);
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-copper);
-      color: #fff;
-    }
-
-    .btn-outline {
-      border-color: var(--text-dark);
-      color: var(--text-dark);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: var(--text-dark);
-      color: #fff;
-    }
-
-    .topbar {
-      border-bottom: 1px solid var(--border-color);
-      font-size: .8rem;
-      letter-spacing: .05em;
-      color: var(--text-muted);
-    }
-
-    .topbar .wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      min-height: 46px;
-      gap: 20px;
-    }
-
-    .topbar strong {
-      color: var(--text-dark);
-      font-weight: 600;
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      background: rgba(249, 246, 240, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(229, 223, 213, 0.6);
-    }
-
-    .nav .wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 90px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .brand-mark {
-      font-family: var(--font-luxury);
-      font-size: 1.8rem;
-      font-weight: 400;
-      color: var(--text-dark);
-      border-right: 1px solid var(--border-color);
-      padding-right: 16px;
-      line-height: 1;
-    }
-
-    .brand-text {
-      font-family: var(--font-luxury);
-      font-size: 1.1rem;
-      font-weight: 500;
-      line-height: 1.2;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-    }
-
-    .brand-text span {
-      display: block;
-      font-family: var(--font-sans);
-      color: var(--accent-copper);
-      font-size: .65rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      margin-top: 2px;
-      font-weight: 600;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 8px;
-    }
-
-    .nav-links a {
-      padding: 8px 16px;
-      font-size: .8rem;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      font-family: var(--font-luxury);
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover {
-      color: var(--text-dark);
-    }
-
-    .hero {
-      position: relative;
-      min-height: calc(100vh - 136px);
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(90deg, rgba(249,246,240,1) 0%, rgba(249,246,240,0.95) 45%, rgba(249,246,240,0.4) 75%, rgba(249,246,240,0.1) 100%),
-        url("https://cdn.pixabay.com/photo/2016/11/07/12/32/tree-worker-1804225_1280.jpg") center right / cover;
-      padding: 80px 0;
-    }
-
-    .hero-copy {
-      max-width: 720px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .phone-link-hero {
-      display: block;
-      font-family: var(--font-luxury);
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 300;
-      color: var(--text-dark);
-      margin-bottom: 34px;
-      transition: var(--transition);
-    }
-
-    .phone-link-hero:hover {
-      color: var(--accent-copper);
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-      background: var(--bg-paper);
-    }
-
-    .stat-card {
-      padding: 50px 40px;
-      border-right: 1px solid var(--border-color);
-    }
-
-    .stat-card:last-child {
-      border-right: none;
-    }
-
-    .stat-card b {
-      display: block;
-      font-family: var(--font-luxury);
-      font-size: clamp(3.2rem, 6vw, 4.2rem);
-      font-weight: 300;
-      color: var(--accent-copper);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .stat-card span {
-      display: block;
-      font-size: .78rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .15em;
-      color: var(--text-dark);
-      margin-bottom: 16px;
-    }
-
-    .stat-card p {
-      font-size: .92rem;
-      line-height: 1.7;
-    }
-
-    section {
-      padding: 140px 0;
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: flex-end;
-      margin-bottom: 80px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
-    }
-
-    .service-list {
-      list-style: none;
-      display: grid;
-      gap: 0;
-    }
-
-    .service-list li {
-      display: grid;
-      grid-template-columns: 60px 1fr;
-      padding: 30px 0;
-      border-top: 1px solid var(--border-color);
-    }
-
-    .service-list li:last-child {
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .service-list .num {
-      font-family: var(--font-luxury);
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: var(--accent-copper);
-    }
-
-    .service-list strong {
-      display: block;
-      font-size: 1.15rem;
-      font-family: var(--font-luxury);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 6px;
-      color: var(--text-dark);
-    }
-
-    .about-panel.dark {
-      background: var(--text-dark);
-      color: #fff;
-      padding: 60px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .about-panel.dark h3 {
-      margin: 20px 0;
-      font-size: 2rem;
-      color: #FAF8F5;
-    }
-
-    .about-panel.dark p {
-      color: #A59F99;
-    }
-
-    .fleet {
-      background: #1A1917;
-      color: #fff;
-    }
-
-    .fleet .kicker {
-      color: var(--accent-copper);
-    }
-
-    .fleet h2 {
-      color: #fff;
-    }
-
-    .fleet .lead {
-      color: #BDB7AF;
-    }
-
-    .fleet-layout {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 60px;
-    }
-
-    .fleet-note {
-      max-width: 800px;
-    }
-
-    .fleet-note p {
-      color: #A8A39D;
-      margin-top: 20px;
-    }
-
-    .comparison {
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    th,
-    td {
-      padding: 24px 16px;
-      border-bottom: 1px solid #2E2D2A;
-    }
-
-    th {
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--accent-copper);
-    }
-
-    td {
-      color: #D1CFC9;
-      font-size: .95rem;
-    }
-
-    td:first-child {
-      font-family: var(--font-luxury);
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: #fff;
-    }
-
-    tr:hover td {
-      color: #fff;
-      background: #22211F;
-    }
-
-    .price {
-      color: var(--accent-copper);
-      font-weight: 600;
-      font-family: var(--font-luxury);
-    }
-
-    .areas-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 0;
-    }
-
-    .step {
-      display: grid;
-      grid-template-columns: 60px 1fr;
-      padding: 34px 0;
-      border-top: 1px solid var(--border-color);
-      opacity: 0.25;
-      transition: opacity 0.6s ease, border-color 0.6s ease;
-    }
-
-    .step:last-child {
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .step::before {
-      content: "0" counter(step);
-      counter-increment: step;
-      font-family: var(--font-luxury);
-      font-size: 1.3rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      transition: color 0.6s ease;
-    }
-
-    .step h3 {
-      font-size: 1.25rem;
-      font-weight: 400;
-      margin-bottom: 6px;
-      color: var(--text-dark);
-    }
-
-    .step.is-active {
-      opacity: 1;
-    }
-
-    .step.is-active::before {
-      color: var(--accent-copper);
-      font-weight: 500;
-    }
-
-    .cities-footer-row {
-      margin-top: 80px;
-      border-top: 1px solid var(--border-color);
-      padding-top: 40px;
-      width: 100%;
-    }
-
-    .cities-footer-row h4 {
-      font-family: var(--font-luxury);
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-
-    .cities-linear-strip {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      width: 100%;
-    }
-
-    .city-item {
-      font-family: var(--font-luxury);
-      font-size: .85rem;
-      font-weight: 500;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--text-dark);
-      position: relative;
-      padding-bottom: 4px;
-      transition: var(--transition);
-    }
-
-    .city-item::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent-copper);
-      transition: var(--transition);
-    }
-
-    .city-item:hover {
-      color: var(--accent-copper);
-    }
-
-    .city-item:hover::after {
-      width: 100%;
-    }
-
-    .cta {
-      padding: 140px 0;
-      background: var(--bg-paper);
-      border-top: 1px solid var(--border-color);
-    }
-
-    .cta-card {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .cta p {
-      margin-top: 20px;
-    }
-
-    .contact-panel {
-      border-left: 1px solid var(--border-color);
-      padding-left: 60px;
-    }
-
-    .contact-panel small {
-      display: block;
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--accent-copper);
-      margin-bottom: 10px;
-    }
-
-    .contact-panel a.phone {
-      display: block;
-      font-family: var(--font-luxury);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 300;
-      color: var(--text-dark);
-      margin-bottom: 30px;
-      line-height: 1;
-    }
-
-    .contact-panel a.phone:hover {
-      color: var(--accent-copper);
-    }
-
-    address {
-      font-style: normal;
-      color: var(--text-muted);
-      font-size: .95rem;
-      line-height: 1.8;
-    }
-
-    footer {
-      background: var(--text-dark);
-      color: #8C8680;
-      font-size: .8rem;
-      padding: 50px 0;
-      letter-spacing: .05em;
-    }
-
-    footer .wrap {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    footer span:first-child {
-      color: #B3ADA6;
-    }
-
-    @media (max-width: 980px) {
-      .wrap {
-        width: min(1200px, calc(100% - 32px));
-      }
-
-      .topbar .wrap {
-        min-height: auto;
-        padding: 12px 0;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-      }
-
-      .nav .wrap {
-        min-height: 110px;
-        flex-direction: column;
-        justify-content: center;
-        gap: 14px;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .section-head,
-      .about-grid,
-      .areas-layout,
-      .cta-card,
-      .stats {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .stat-card {
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
-        padding: 40px;
-      }
-
-      .stat-card:last-child {
-        border-bottom: none;
-      }
-
-      .contact-panel {
-        border-left: none;
-        padding-left: 0;
-        border-top: 1px solid var(--border-color);
-        padding-top: 40px;
-      }
-
-      .comparison {
-        overflow-x: auto;
-      }
-
-      table {
-        min-width: 700px;
-      }
-
-      section {
-        padding: 90px 0;
-      }
-
-      .cities-linear-strip {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="no-scroll">
@@ -813,7 +16,7 @@
       <p class="kicker">Robert Maćkowiak</p>
       <h1>Wynajem podnośników koszowych</h1>
       <div>
-        <button class="btn btn-luxury-welcome" type="button" onclick="closeWelcomeGate()">Przeczytaj</button>
+        <button class="btn btn-luxury-welcome" type="button" id="welcomeButton">Przeczytaj</button>
       </div>
     </div>
   </div>
@@ -890,6 +93,7 @@
             <p class="kicker">Zakres usług</p>
             <h2>Precyzja wykonania tam, gdzie liczą się centymetry.</h2>
           </div>
+
           <div>
             <p class="lead">Prace na wysokościach w sąsiedztwie napowietrznych linii energetycznych lub zabytkowej architektury wymagają mistrzowskiej kontroli.</p>
           </div>
@@ -962,6 +166,7 @@
                 <th>Transport</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
                 <td>VW LT Ruthmann</td>
@@ -972,6 +177,7 @@
                 <td class="price">od 130 zł netto / h</td>
                 <td>4 zł netto / km</td>
               </tr>
+
               <tr>
                 <td>Star 266 - P-184 ME</td>
                 <td>18 m</td>
@@ -981,6 +187,7 @@
                 <td class="price">od 160 zł netto / h</td>
                 <td>5 zł netto / km</td>
               </tr>
+
               <tr>
                 <td>Mercedes Ruthmann</td>
                 <td>25 m</td>
@@ -990,6 +197,7 @@
                 <td class="price">od 160 zł netto / h</td>
                 <td>4,5 zł netto / km</td>
               </tr>
+
               <tr>
                 <td>Tatra 815</td>
                 <td>28 m</td>
@@ -1012,6 +220,7 @@
             <p class="kicker">Metodologia logistyczna</p>
             <h2>Audyt technologiczny przed każdym zadaniem.</h2>
           </div>
+
           <div>
             <p class="lead">Usługi realizujemy z dbałością o detale logistyczne, optymalizując czas dojazdu ciężkiego sprzętu na miejsce docelowe.</p>
           </div>
@@ -1048,13 +257,14 @@
             </article>
           </div>
 
-          <div style="display: flex; align-items: center;">
+          <div class="areas-copy">
             <p>Nasza struktura operacyjna bazuje na pełnej powtarzalności procesów. Każdy krok aktywuje się podczas przewijania strony, pokazując kolejne etapy realizacji.</p>
           </div>
         </div>
 
         <div class="cities-footer-row">
           <h4>Kluczowe obszary operacyjne w regionie</h4>
+
           <div class="cities-linear-strip">
             <span class="city-item">Poznań</span>
             <span class="city-item">Grodzisk Wlkp.</span>
@@ -1077,7 +287,7 @@
           <h2>Ustal dogodny termin realizacji.</h2>
           <p class="lead">Świadczymy również nietypowe usługi podnośnikowe dla budownictwa i przemysłu. Skontaktuj się, aby otrzymać indywidualną wycenę techniczną.</p>
 
-          <div class="button-row" style="margin-top: 40px;">
+          <div class="button-row cta-actions">
             <a class="btn btn-primary" href="tel:602556495">Połącz z operatorem</a>
             <a class="btn btn-outline" href="#podnosniki">Powrót do specyfikacji</a>
           </div>
@@ -1106,47 +316,6 @@
     </div>
   </footer>
 
-  <script>
-    function closeWelcomeGate() {
-      const overlay = document.getElementById("welcomeOverlay");
-
-      overlay.classList.add("is-hidden");
-
-      document.body.classList.remove("no-scroll");
-      document.documentElement.classList.remove("no-scroll");
-
-      handleProgressBar();
-      handleTimelineHighlight();
-    }
-
-    window.addEventListener("scroll", function () {
-      handleProgressBar();
-      handleTimelineHighlight();
-    }, { passive: true });
-
-    function handleProgressBar() {
-      const progressBar = document.getElementById("luxuryBar");
-      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-
-      progressBar.style.width = scrolled + "%";
-    }
-
-    function handleTimelineHighlight() {
-      const steps = document.querySelectorAll(".step");
-      const activationPoint = window.innerHeight * 0.75;
-
-      steps.forEach(function (step) {
-        const rect = step.getBoundingClientRect();
-
-        if (rect.top < activationPoint) {
-          step.classList.add("is-active");
-        } else {
-          step.classList.remove("is-active");
-        }
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
